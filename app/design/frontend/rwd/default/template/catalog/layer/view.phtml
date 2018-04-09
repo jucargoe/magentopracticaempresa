@@ -124,6 +124,9 @@
 
         $(".checkboxFilter").click(function () {
 
+            var direccion=$(this).attr('for');
+            location.href=direccion;
+
         });
 
         $( ".glyphicon-menu-down" ).click(function() {
@@ -157,10 +160,10 @@
     }
     function filtrado(){
         var minimo=document.getElementById("amountmin").value;
-        minimo.substring(0,minimo.length-1);
+        minimo.substring(0,minimo.length);
         var maximo=document.getElementById("amountmax").value;
         var ubicacionActual=location.href+"&price=";
-        location.href = ubicacionActual+minimo.substring(0,minimo.length-2)+"-"+maximo.substring(0,minimo.length);
+        location.href = ubicacionActual+minimo.substring(0,minimo.length-1)+"-"+maximo.substring(0,minimo.length);
     }
 </script>
     <script>

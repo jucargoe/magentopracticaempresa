@@ -34,7 +34,7 @@
 
 <ol style="margin: 15px;">
 <?php foreach ($this->getItems() as $_item): ?>
-    <li><!--===========================================================================0-->
+    <li style="margin: 10px;"><!--===========================================================================0-->
 
         <!--===========================================================================0-->
         <?php if ($_item->getCount() > 0): ?>
@@ -50,7 +50,7 @@
             <span>
                 <?php echo $_item->getLabel(); ?>
                 <?php if ($this->shouldDisplayProductCount()): ?>
-                    <span class="count">(<?php echo $_item->getCount() ?>)</span>
+                 <span class="count">(<?php echo $_item->getCount() ?>)</span>
                 <?php endif; ?>
             </span>
         <?php endif; ?>

@@ -93,7 +93,7 @@ class Mage_Catalog_Model_Layer_Filter_Attribute extends Mage_Catalog_Model_Layer
         if ($filter && strlen($text)) {
             $this->_getResource()->applyFilterToCollection($this, $filter);
             $this->getLayer()->getState()->addFilter($this->_createItem($text, $filter));
-            $this->_items = array();
+            //$this->_items = array();
         }
         return $this;
     }

@@ -55,7 +55,7 @@ class Mage_Catalog_Model_Resource_Layer_Filter_Attribute extends Mage_Core_Model
         $collection = $filter->getLayer()->getProductCollection();
         $attribute  = $filter->getAttributeModel();
         $connection = $this->_getReadAdapter();
-        $tableAlias = $attribute->getAttributeCode() . '_idx';
+        $tableAlias = $attribute->getAttributeCode() . '_idx_'.$value;
         $conditions = array(
             "{$tableAlias}.entity_id = e.entity_id",
             $connection->quoteInto("{$tableAlias}.attribute_id = ?", $attribute->getAttributeId()),

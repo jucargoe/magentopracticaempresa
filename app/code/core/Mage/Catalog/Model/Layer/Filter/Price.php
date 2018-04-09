@@ -307,9 +307,9 @@ class Mage_Catalog_Model_Layer_Filter_Price extends Mage_Catalog_Model_Layer_Fil
     {
         if (Mage::app()->getStore()->getConfig(self::XML_PATH_RANGE_CALCULATION) == self::RANGE_CALCULATION_IMPROVED) {
             return $this->_getCalculatedItemsData();
-        } elseif ($this->getInterval()) {
+        } /*elseif ($this->getInterval()) {
             return array();
-        }
+        }*/
 
         $range      = $this->getPriceRange();
         $dbRanges   = $this->getRangeItemCounts($range);

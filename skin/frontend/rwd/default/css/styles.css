@@ -29,6 +29,7 @@
 /*
  * Corrects `block` display not defined in IE 8/9.
  */
+
 .checkboxFilter:hover{
   text-decoration: underline #f1805a;
   color:#f1805a;
@@ -36,14 +37,23 @@
 [type="checkbox"]:not(:checked),
 [type="checkbox"]:checked {
   position: absolute;
-  left: -9999px;
 }
 [type="checkbox"]:not(:checked) + label,
 [type="checkbox"]:checked + label {
   position: relative;
   padding-left: 1.95em;
   cursor: pointer;
+  color: #08152c;
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: normal;
 }
+[type="checkbox"]:not(:checked) + label:hover,
+ [type="checkbox"]:checked + label:hover {
+   position: relative;
+   padding-left: 1.95em;
+   cursor: pointer;
+   color: #e55d50;
+ }
 
 /* checkbox aspect */
 [type="checkbox"]:not(:checked) + label:before,
@@ -57,10 +67,12 @@
   background: #fff;
   border: 1px solid #BBA89E;
   margin: 5px;
+
 }
 /* checked mark aspect */
 [type="checkbox"]:not(:checked) + label:after,
 [type="checkbox"]:checked + label:after {
+  text-decoration: none;
   content: '✔';
   position: absolute;
   top: -0.2em;

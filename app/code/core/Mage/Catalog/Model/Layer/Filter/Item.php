@@ -122,4 +122,13 @@ class Mage_Catalog_Model_Layer_Filter_Item extends Varien_Object
         }
         return $value;
     }
+    public function isSelected(){
+        $selected = Mage::getSingleton('core/app')->getRequest()->getParam($this->getFilter()->getRequestVar());
+
+        if($selected == $this->getValue()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

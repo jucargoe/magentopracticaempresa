@@ -29,13 +29,81 @@
 /*
  * Corrects `block` display not defined in IE 8/9.
  */
-.filtradoCheckbox{
-  background-color: black;
+.checkboxFilter:hover{
+  text-decoration: underline #f1805a;
+  color:#f1805a;
+}
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 1.95em;
+  cursor: pointer;
 }
 
-.filtradoCheckbox:checked{
-  background-color: black;
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: -6px;
+  width: 1.5em;
+  height: 1.5em;
+  background: #fff;
+  border: 1px solid #BBA89E;
+  margin: 5px;
 }
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '✔';
+  position: absolute;
+  top: -0.2em;
+  left: -0.1em;
+  font-size: 40px;
+  line-height: 0.8;
+  color: #e55d50;
+  transition: all .2s;
+  font-family: Helvetica, Arial, sans-serif;
+}
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+[type="checkbox"]:disabled:checked + label:after {
+  color: #999;
+}
+[type="checkbox"]:disabled + label {
+  color: #aaa;
+}
+/* accessibility */
+[type="checkbox"]:checked:focus + label:before,
+[type="checkbox"]:not(:checked):focus + label:before {
+  /*border: 2px dotted blue;*/
+}
+
+/* hover style just for information */
+label:hover:before {
+  /*border: 2px solid #4778d9!important;*/
+}
+
 #submenu{
   background-color: transparent;
 
@@ -9735,7 +9803,7 @@ p.wishlist-header:hover{
   display: block;
   border-right: 7px solid transparent;
   border-left: 7px solid transparent;
-  border-bottom: 7px solid #3399cc;
+  border-bottom: 7px solid transparent;
   border-top: none;
   left: 50%;
   top: -7px;

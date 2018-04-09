@@ -32,20 +32,20 @@
  */
 ?>
 
-<ol>
+<ol style="margin: 15px;">
 <?php foreach ($this->getItems() as $_item): ?>
     <li><!--===========================================================================0-->
 
         <!--===========================================================================0-->
         <?php if ($_item->getCount() > 0): ?>
-        <div class="checkbox">
-            <input type="checkbox" class="filtradoCheckbox" value="<?php echo $this->urlEscape($_item->getUrl()) ?>"/> <label href="<?php echo $this->urlEscape($_item->getUrl()) ?>">
+
+            <input type="checkbox" id="<?php echo $this->urlEscape($_item->getUrl()) ?>" class="filtradoCheckbox" value="<?php echo $this->urlEscape($_item->getUrl()) ?>"/>
+            <label for="<?php echo $this->urlEscape($_item->getUrl()) ?>" class="checkboxFilter" href="<?php echo $this->urlEscape($_item->getUrl()) ?>">
                 <?php echo $_item->getLabel() ?>
                 <?php if ($this->shouldDisplayProductCount()): ?>
                 <!--<span class="count">(<?php //echo $_item->getCount() ?>)</span>-->
                 <?php endif; ?>
             </label>
-        </div>
         <?php else: ?>
             <span>
                 <?php echo $_item->getLabel(); ?>

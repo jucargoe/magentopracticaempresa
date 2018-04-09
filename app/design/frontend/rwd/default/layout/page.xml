@@ -79,6 +79,7 @@
                 <action method="addItem"><type>skin_css</type><name>css/styles.css</name><params/><if><![CDATA[<!--[if (gte IE 9) | (IEMobile)]><!-->]]></if></action>
                 <action method="addItem"><type>skin_css</type><name>css/madisonisland.css</name><params/><if><![CDATA[<!--[if (gte IE 9) | (IEMobile)]><!-->]]></if></action>
                 <action method="addItem"><type>skin_css</type><name>css/estilos/jquery-ui-1.12.1.custom/jquery-ui.css</name><params/><if><![CDATA[<!--[if (gte IE 9) | (IEMobile)]><!-->]]></if></action>
+                
 
                 <!-- Sets viewport meta tag using text block -->
                 <block type="core/text" name="head.viewport">

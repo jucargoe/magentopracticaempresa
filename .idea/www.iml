@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/dev/tests/functional/testsuites/Magento" isTestSource="false" packagePrefix="Magento\" />
+      <sourceFolder url="file://$MODULE_DIR$/dev/tests/functional/vendor/magento/mtf/Magento" isTestSource="false" packagePrefix="Magento\" />
+      <sourceFolder url="file://$MODULE_DIR$/dev/tests/functional/generated/Test" isTestSource="false" packagePrefix="Test\" />
+      <sourceFolder url="file://$MODULE_DIR$/dev/tests/functional/lib/Magento" isTestSource="false" packagePrefix="Magento\" />
+      <sourceFolder url="file://$MODULE_DIR$/dev/tests/functional/tests/app/Mage" isTestSource="false" packagePrefix="Mage\" />
+      <sourceFolder url="file://$MODULE_DIR$/dev/tests/functional/generated/Mage" isTestSource="false" packagePrefix="Mage\" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

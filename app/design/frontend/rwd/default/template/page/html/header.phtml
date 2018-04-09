@@ -1,0 +1,145 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+
+
+
+<div class="header-language-background">
+    <div class="header-language-container">
+        <div class="store-language-container">
+            <?php echo $this->getChildHtml('store_language') ?>
+        </div>
+
+        <?php echo $this->getChildHtml('currency_switcher') ?>
+
+        <p class="welcome-msg"><?php echo $this->getChildHtml('welcome') ?> <?php echo $this->getChildHtml('accountLinks') ?></p>
+    </div>
+</div>*/
+?>
+<head>
+    <link rel="stylesheet" href="http://pruebamagento.loc/estilos/bootstrap-4.0.0-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="estilos/jquery-ui-1.12.1.custom/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#slider-range" ).slider({
+                range: true,
+                min: 0,
+                max: 500,//pasar aqui el valor del producto maximo de la pagina
+                values: [ 0, 300 ],//pasar aqui el valor del producto maximo de la pagina
+                slide: function( event, ui ) {
+                    $( "#amountmin" ).val(  ui.values[ 0 ] + "€ " );
+                    $( "#amountmax" ).val(    ui.values[ 1 ]+ "€" );
+                }
+            });
+            $( "#amount" ).val( $( "#slider-range" ).slider( "values", 0 ) +
+                "€ " + $( "#slider-range" ).slider( "values", 1 )+"€ " );
+        } );
+    </script>
+
+</head>
+<header id="header" class="page-header" style="padding-bottom: 0;border-bottom: 0px solid transparent;">
+
+    <div class="page-header-container">
+
+
+        <?php // In order for the language switcher to display next to logo on smaller viewports, it will be moved here.
+              // See app.js for details ?>
+        <div class="store-language-container"></div>
+        <div class="custom col-x-3" style="max-width: 1170px;align-content: center; margin-top: -35px; margin-left: auto; margin-right: auto; padding-left: 0; padding-right: 0; text-align: right;font:75%/150% Arial, Helvetica, sans-serif;color:#08152c;">
+            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('info-header-sansanum')->toHtml()?>
+        </div>
+        <!-- Skip Links -->
+
+        <div class="skip-links">
+
+            <a href="#header-nav" class="skip-link skip-nav">
+                <span class="icon"></span>
+                <span class="label"><?php echo $this->__('Menu'); ?></span>
+            </a>
+
+            <a href="#header-search" class="skip-link skip-search">
+                <span class="icon"></span>
+                <span class="label"><?php echo $this->__('Search'); ?></span>
+            </a>
+
+            <!--<div class="account-cart-wrapper">
+                <a href="<?//php echo $this->helper('customer')->getAccountUrl(); ?>" data-target-element="#header-account" class="skip-link skip-account">
+                    <span class="icon"></span>
+                    <span class="label"><?//php echo $this->__('Account'); ?></span>
+                </a>
+
+                <!-- Cart
+
+
+            </div>-->
+
+
+        </div>
+
+        <!-- Navigation -->
+
+            <div style="float: left; margin-left:19%; margin-top: 2px;" >
+                <a class="logo" href="<?php echo $this->getUrl('') ?>">
+                    <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="large" style="height: 69px;width: 135px;margin-bottom: -1%;" />
+                    <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="small" />
+                </a>
+            </div>
+
+            <div id="header-nav" class="skip-content">
+                <?php echo $this->getChildHtml('topMenu') ?>
+            </div>
+
+
+
+            <div class="cambioborde" style="width:156px;height:41px;margin-right:19%;float:right; -webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;text-color:black;margin-top: 7px;">
+                <div style="color:black;"><?php echo $this->getChildHtml('minicart_head'); ?></div>
+            </div>
+            <div style="position:relative;width:156px;height:41px;float:right; -webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;text-color:black;margin-top: 7px;">
+                <a href="https://sansanum.com/wishlist/" class="wishlist-header" style="color:#b8dba0; text-decoration: none;">
+                    <strong><p class="wishlist-header" style="font-family: libreFranklin-bold;font-size: 13px;margin-top: 10px;"><span class="glyphicon glyphicon-heart-empty" style="font-size: 14px;margin-right: 5px"></span> Lista de deseos </p></strong>
+                </a>
+            </div>
+                <!-- Search -->
+            <div style="background-color: #FED6D2; align-content: center; margin-top: 83px; padding-bottom:2px;margin-left: -1px;">
+                <div style="width: 50%; margin-left: 30%;background-color: #FED6D2;margin-top: 54px; border: 1px solid transparent ; padding: 2px; border-radius: 2px;">
+                    <?php echo $this->getChildHtml('topSearch') ?>
+                </div>
+            </div>
+
+                <!-- Account -->
+
+            <div id="header-account" class="skip-content">
+                <?php echo $this->getChildHtml('topLinks') ?>
+            </div>
+        </div>
+</header>
+
+
+<?php echo $this->getChildHtml('topContainer'); ?>

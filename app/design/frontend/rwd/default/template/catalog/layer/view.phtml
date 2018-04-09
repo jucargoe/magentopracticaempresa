@@ -1,0 +1,200 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Category layered navigation
+ *
+ * @see Mage_Catalog_Block_Layer_View
+ */
+?>
+<?php if($this->canShowBlock()): ?>
+<div class="block block-layered-nav<?php if (!$this->getLayer()->getState()->getFilters()): ?> block-layered-nav--no-filters<?php endif; ?>">
+    <!--<div class="block-title">
+        <strong><span><?php //echo $this->__('Shop By') ?></span></strong>
+    </div>-->
+    <div class="block-content toggle-content">
+        <?php echo $this->getStateHtml() ?>
+        <?php if ($this->getLayer()->getState()->getFilters()): ?>
+            <div class="actions"><a href="<?php echo $this->getClearUrl() ?>"><?php echo $this->__('Clear All') ?></a></div>
+        <?php endif; ?>
+        <?php if($this->canShowOptions()): ?>
+            <p class="block-subtitle block-subtitle--filter"><?php echo $this->__('Filter') ?></p>
+            <dl id="narrow-by-list">
+                <dt><strong style="font-family: libreFranklin-bold;"><?php echo "Categorias"; ?></strong></dt>
+                <dd>
+                    <div class="layered-categories" style="background:transparent;">
+                        <?php $_helper = Mage::helper('catalog/category') ?>
+                        <?php $_categories = $_helper->getStoreCategories() ?>
+                        <?php $currentCategory = Mage::registry('current_category') ?>
+                        <?php $contador=0; ?>
+                        <?php if (count($_categories) > 0): ?>
+                            <ul class="categoria" style="background:transparent;position: relative">
+                                <?php foreach($_categories as $_category): ?>
+
+                                    <li class="accordion" style="">
+                                        <div style="position: relative;background: transparent;border-bottom: 1px dashed #bdc4d1;border-radius: 0px;padding: 0px;margin: 0px;width: 269px;height: 41px;" >
+                                            <a onclick="redireccionar('<?php echo $_helper->getCategoryUrl($_category) ?>')" href="<?php echo $_helper->getCategoryUrl($_category) ?>" style="color: black;width: 100%;position: absolute;height: 100%;padding: 0px;margin: 0px;font-size: 1em;line-height: 37px;" >
+                                                <strong style="padding-left: 10px;line-height: 4;" ><?php echo $_category->getName() ?></strong>
+
+                                            </a>
+                                            <span style="transition: transform 0.5s;color:black;margin-left: 83%;font-size: 18px;width: 40px;height: 42px;text-align: center;margin-top: 0px;line-height: 44px;" class="glyphicon glyphicon-menu-down" ></span>
+
+                                        </div>
+                                        <?php $_category = Mage::getModel('catalog/category')->load($_category->getId()) ?>
+                                        <?php $_subcategories = $_category->getChildrenCategories() ?>
+                                        <?php if (count($_subcategories) > 0): ?>
+                                            <ul id="submenu"  style="padding: 16px 10px 16px 20px;">
+
+                                                <?php foreach($_subcategories as $_subcategory): ?>
+                                                    <li>
+                                                        <a href="<?php echo $_helper->getCategoryUrl($_subcategory) ?>">
+                                                            <?php echo $_subcategory->getName() ?>
+                                                        </a>
+                                                    </li>
+                                                <?php endforeach; ?>
+                                            </ul>
+                                        <?php endif; ?>
+                                    </li>
+
+                                <?php endforeach; ?>
+                            </ul>
+                        <?php endif; ?>
+                    </div>
+                </dd>
+                <?php $_filters = $this->getFilters() ?>
+                <?php foreach ($_filters as $_filter): ?>
+
+
+                <?php if($_filter->getItemsCount()): ?>
+                    <?php $contador=0; ?>
+                    <dt style="display:block" id="<?php echo $this->__($_filter->getName()); echo $contador; ?>"><strong  style="font-family: libreFranklin-bold;"><?php echo $this->__($_filter->getName()) ?></strong></dt>
+                    <?php $contador++; ?>
+                    <dd style="display:block" id="<?php echo $this->__($_filter->getName()); echo $contador; ?>"style="font-family: libreFranklin-bold;"><?php echo $_filter->getHtml() ?></dd>
+
+                <?php endif; ?>
+
+                <?php endforeach; ?>
+                <dt><strong style="font-family: libreFranklin-bold;">PRECIO</strong></dt><br>
+                <div id="slider-range" onclick="filtrado()"></div>
+                <div style="position: relative" >
+                    <input type="text" id="amountmin" readonly style="border:0; color:#081C38; width: 262px; margin-left: -11px;">
+                    <input type="text" id="amountmax" readonly style="float:right; border:0; color:#081C38;position: absolute;">
+                </div>
+                falta añadir el precio dinamicamente
+            </dl>
+            <script type="text/javascript">decorateDataList('narrow-by-list')</script>
+        <?php endif; ?>
+    </div>
+</div>
+    <script>
+        $( document ).ready(function() {
+
+        });
+        $( function() {
+            if( $('.filtradoCheckbox').is(':checked') ) {
+        }
+            $( ".accordion" ).accordion({
+                collapsible: true,
+                active:false
+            });
+        } );
+
+        $(".filtradoCheckbox").click(function () {
+            if($(this).is(':checked')){
+
+            }else{
+
+            }
+        });
+
+        $( ".glyphicon-menu-down" ).click(function() {
+            if($(this).css('transform')=='matrix(-1, 0, 0, -1, 0, 0)'){
+                $(this).animate({  textIndent: 0 }, {
+                    step: function() {
+                        $(this).css('transform','rotate(0deg)');
+                    },
+                    duration:'slow'
+                },'linear');
+            }else{
+                $(this).animate({  textIndent: 0 }, {
+                    step: function(now,fx) {
+                        $(this).css('transform','rotate(180deg)');
+                    },
+                    duration:'slow'
+                },'linear');
+            }
+        });
+
+    </script>
+<script>
+    window.onload= function () {
+        document.getElementsByClassName("ui-accordion-header-icon").className="none";
+        document.getElementById("Price0").style.display;
+        document.getElementById("Price1").style.display;
+        //alert(document.getElementsByClassName("marcaCheckbox").length);
+    }
+    function redireccionar(link) {
+        location.href= link+"";
+    }
+    function filtrado(){
+        var minimo=document.getElementById("amountmin").value;
+        minimo.substring(0,minimo.length-1);
+        var maximo=document.getElementById("amountmax").value;
+        var ubicacionActual=location.href+"&price=";
+        location.href = ubicacionActual+minimo.substring(0,minimo.length-2)+"-"+maximo.substring(0,minimo.length);
+    }
+</script>
+    <script>
+        $( function() {
+            var precios=document.getElementsByClassName("price");
+            var prices=[];
+            for(var x=0;x<precios.length;x++){
+                prices[x]=precios[x].firstChild.nodeValue.substr(0,precios[x].firstChild.nodeValue.length-2);
+            }
+            var conversion=[];
+            for (var x=0;x<prices.length;x++){
+                conversion[x]=parseFloat(prices[x]);
+            }
+            conversion.sort(function(a, b){return a-b});
+            //alert(conversion[0]);
+            //alert(conversion[conversion.length-1]);
+            $( "#slider-range" ).slider({
+                range: true,
+                min: 0,
+                max: 100,//pasar aqui el valor del producto maximo de la pagina
+                values: [ 0, 100 ],//pasar aqui el valor del producto maximo de la pagina
+                slide: function( event, ui ) {
+                    $( "#amountmin" ).val(  ui.values[ 0 ] + "€" );
+                    $( "#amountmax" ).val(  ui.values[ 1 ] + "€" );
+                }
+            });
+            $( "#amountmin" ).val( $( "#slider-range" ).slider( "values", 0 ) + "€ ");
+            $( "#amountmax" ).val( $( "#slider-range" ).slider( "values", 1 ) + "€ ");
+        } );
+    </script>
+
+<?php endif; ?>

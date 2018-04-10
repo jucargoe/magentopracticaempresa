@@ -1293,11 +1293,25 @@ a.button:hover {
 /* -------------------------------------------- *
  * Icons
  */
-.icon-sprite, .btn-remove2, .ratings .rating-box, .ratings .rating-box .rating, .sorter > .sort-by .sort-by-switcher, .sorter > .view-mode .grid,
-.sorter > .view-mode .list, .skip-nav .icon, .skip-search .icon, #search_mini_form .search-button:before, .skip-account .icon, .product-view .sharing-links a, .review-summary-table .rating-box .rating-number:after, .ratings-table .rating-box, .ratings-table .rating-box .rating {
+.icon-sprite, .btn-remove2, .ratings .rating-box, .ratings .rating-box .rating, .sorter > .sort-by .sort-by-switcher,
+.skip-nav .icon, .skip-search .icon, #search_mini_form .search-button:before, .skip-account .icon, .product-view .sharing-links a, .review-summary-table .rating-box .rating-number:after, .ratings-table .rating-box, .ratings-table .rating-box .rating {
   background-image: url(../images/icon_sprite.png);
   background-repeat: no-repeat;
   text-indent: -9999px;
+}
+.sorter > .view-mode .grid{
+  background-image: url(../images/grid.png);
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+.sorter > .view-mode .list{
+  background-image: url(../images/list.png);
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  margin-left: 10px;
+  margin-top: -1px;
 }
 .skip-cart .icon{
   background-image: url(../images/shopping_bag.png);
@@ -2281,7 +2295,7 @@ span.weee {
   width: 30px;
   height: 30px;
 }
-.sorter > .view-mode .grid {
+/*.sorter > .view-mode .grid {
   margin-right: 5px;
   background-position: 8px -492px;
 }
@@ -2295,7 +2309,7 @@ span.weee {
 .sorter > .view-mode strong.list,
 .sorter > .view-mode a.list:hover {
   background-position: -39px -517px;
-}
+}*/
 
 .pager {
   overflow: hidden;

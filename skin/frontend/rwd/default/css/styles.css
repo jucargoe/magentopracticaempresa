@@ -29,7 +29,11 @@
 /*
  * Corrects `block` display not defined in IE 8/9.
  */
+.displayInforPersonalizado{
+    width: 34.67%;
 
+    position: absolute;
+}
 .checkboxFilter:hover{
   text-decoration: underline #f1805a;
   color:#f1805a;
@@ -2134,8 +2138,8 @@ span.weee {
  */
 .product-image,
 .no-touch .product-img-box .product-image:not(.zoom-available):hover {
-  position: relative;
-  display: block;
+    position: relative;
+    display: block;
 }
 
 @media only screen and (max-width: 770px) {
@@ -5241,8 +5245,7 @@ li p.product-name a:hover {
   border: 0;
 }
 .product-view .product-shop {
-  width: 50%;
-  float: right;
+  
 }
 .product-view .product-shop .product-name {
   display: none;
@@ -5366,8 +5369,8 @@ li p.product-name a:hover {
   }
 }
 .product-img-box {
-  width: 50%;
-  float: left;
+    width: 36.33%;
+    float: left;
 }
 .product-img-box .product-name h1 {
   border: 0;
@@ -5390,7 +5393,12 @@ li p.product-name a:hover {
   display: none;
 }
 .product-image-gallery .gallery-image.visible {
-  display: block;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+
 }
 .product-image-gallery .gallery-image.visible.hidden {
   visibility: hidden;

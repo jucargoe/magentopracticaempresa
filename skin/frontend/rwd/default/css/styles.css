@@ -4423,7 +4423,9 @@ div.head a:hover{
 body.catalogsearch-result-index .page-title h1 {
   border-bottom: none;
 }
-
+.category-products{
+    position: relative;
+}
 .category-image {
   margin-bottom: 1.5em;
 }

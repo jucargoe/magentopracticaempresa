@@ -387,7 +387,17 @@ $_specialPriceStoreLabel = $this->getProductAttribute('special_price')->getStore
                 </p>
             <?php endif; ?>
         <?php endif; ?>
-
+        <?php // Discount percents output start ?>
+        <?php if($_finalPrice < $_price): ?>
+            <?php $_savePercent = 100 - round(($_finalPrice / $_price)*100); ?>
+            <p class="special-price yousave">
+                <span class="label"><?php echo $this->__('You Save:') ?></span>
+                <span class="price">
+                -<?php echo $_savePercent; ?>%
+            </span>
+            </p>
+        <?php endif; ?>
+        <?php // Discount percent output end ?>
     <?php endif; /* if ($_finalPrice == $_price): */ ?>
 
     <?php if ($this->getDisplayMinimalPrice() && $_minimalPriceValue && $_minimalPriceValue < $_convertedFinalPrice): ?>

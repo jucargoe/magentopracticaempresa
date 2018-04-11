@@ -157,50 +157,50 @@
         });
 
     </script>
-<script>
-    window.onload= function () {
-        document.getElementsByClassName("ui-accordion-header-icon").className="none";
-        document.getElementById("Price0").style.display;
-        document.getElementById("Price1").style.display;
-        document.getElementById("Category0").style.display="none";
-        document.getElementById("Category1").style.display="none";
-        //alert(document.getElementsByClassName("marcaCheckbox").length);
-    }
-    function redireccionar(link) {
-        location.href= link+"";
-    }
-    function filtrado(){
-        var minimo=document.getElementById("amountmin").value.split("€");
-        var maximo=document.getElementById("amountmax").value.split("€");
-        //0-100=1%2C100
-        //100-200=2%2C100
-        //200-300=3%2C100
-        //300-400=4%2C100
-        //400-500=5%2C100
-        //500-600=6%2C100
-        var busqueda=0;
-        if(parseInt(minimo)<100){
-            alert(parseInt(minimo)/10);
-        }else{
-            alert(parseInt(minimo)/100);
+    <script>
+        window.onload= function () {
+            document.getElementsByClassName("ui-accordion-header-icon").className="none";
+            document.getElementById("Price0").style.display;
+            document.getElementById("Price1").style.display;
+            document.getElementById("Category0").style.display="none";
+            document.getElementById("Category1").style.display="none";
+            //alert(document.getElementsByClassName("marcaCheckbox").length);
         }
-        if(parseInt(maximo)<100){
-            alert(parseInt(maximo)/10);
-        }else{
-            alert(parseInt(maximo)/100);
+        function redireccionar(link) {
+            location.href= link+"";
         }
+        function filtrado(){
+            var minimo=document.getElementById("amountmin").value.split("€");
+            var maximo=document.getElementById("amountmax").value.split("€");
+            //0-100=1%2C100
+            //100-200=2%2C100
+            //200-300=3%2C100
+            //300-400=4%2C100
+            //400-500=5%2C100
+            //500-600=6%2C100
+            var busqueda=0;
+            if(parseInt(minimo)<100){
+                alert(parseInt(minimo)/10);
+            }else{
+                alert(parseInt(minimo)/100);
+            }
+            if(parseInt(maximo)<100){
+                alert(parseInt(maximo)/10);
+            }else{
+                alert(parseInt(maximo)/100);
+            }
 
 
 
-        var localizacion=location.href.split("?");
-        if(localizacion.length==1){
-            var ubicacionActual=location.href+"?price=";
-        }else{
-            var ubicacionActual=location.href+"_";
+            var localizacion=location.href.split("?");
+            if(localizacion.length==1){
+                var ubicacionActual=location.href+"?price=";
+            }else{
+                var ubicacionActual=location.href+"_";
+            }
+            location.href = ubicacionActual;
         }
-        location.href = ubicacionActual;
-    }
-</script>
+    </script>
     <script>
         $( function() {
             var precios=document.getElementsByClassName("price");

@@ -36,8 +36,9 @@
 
             <block type="page/html_head" name="head" as="head">
                 <action method="addJs"><script>estilos/jquery-ui-1.12.1.custom/jquery-ui.js</script></action>
+                <action method="addJs"><script>estilos/jquery-ui-1.12.1.custom/jquery-ui.min.js</script></action>
                 <action method="addJs"><script>prototype/prototype.js</script></action>
-                <!--<action method="addJs"><script>lib/jquery/jquery-1.12.0.min.js</script></action>-->
+                <action method="addJs"><script>lib/jquery/jquery-1.12.0.min.js</script></action>
                 <action method="addJs"><script>lib/jquery/noconflict.js</script></action>
                 <action method="addJs"><script>lib/ccard.js</script></action>
                 <action method="addJs"><script>prototype/validation.js</script></action>
@@ -79,7 +80,7 @@
                 <action method="addItem"><type>skin_css</type><name>css/styles.css</name><params/><if><![CDATA[<!--[if (gte IE 9) | (IEMobile)]><!-->]]></if></action>
                 <action method="addItem"><type>skin_css</type><name>css/madisonisland.css</name><params/><if><![CDATA[<!--[if (gte IE 9) | (IEMobile)]><!-->]]></if></action>
                 <action method="addItem"><type>skin_css</type><name>css/estilos/jquery-ui-1.12.1.custom/jquery-ui.css</name><params/><if><![CDATA[<!--[if (gte IE 9) | (IEMobile)]><!-->]]></if></action>
-                
+
 
                 <!-- Sets viewport meta tag using text block -->
                 <block type="core/text" name="head.viewport">

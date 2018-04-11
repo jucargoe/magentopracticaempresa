@@ -54,7 +54,12 @@
             </div>
             <div class="displayInforPersonalizado">
             <div class="product-shop">
+                <div class="wapper-brand">
+                    <a class="especial"><?php echo $_product->getAttributeText('manufacturer'); ?></a>
+                </div>
+
                 <div class="product-name">
+
                     <span class="h1"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></span>
                 </div>
 

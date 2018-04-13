@@ -107,25 +107,27 @@
 
             <div style="float: left; margin-left:19%; margin-top: 2px;" >
                 <a class="logo" href="<?php echo $this->getUrl('') ?>">
-                    <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="large" style="height: 69px;width: 135px;margin-bottom: -1%;" />
+                    <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="large" style="margin-bottom: -1%;" />
                     <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="small" />
                 </a>
             </div>
 
             <div id="header-nav" class="skip-content">
                 <?php echo $this->getChildHtml('topMenu') ?>
+                <div class="cambioborde">
+                    <div style="color:black;"><?php echo $this->getChildHtml('minicart_head'); ?></div>
+                </div>
+                <div class="whislist-navbar">
+                    <a href="https://sansanum.com/wishlist/" class="wishlist-header" style="color:#b8dba0; text-decoration: none;">
+                        <strong><p class="wishlist-header" style="font-family: libreFranklin-bold;font-size: 13px;margin-top: 10px;"><span class="glyphicon glyphicon-heart-empty" style="font-size: 14px;margin-right: 5px"></span> Lista de deseos </p></strong>
+                    </a>
+                </div>
             </div>
 
 
 
-            <div class="cambioborde" style="width:156px;height:41px;margin-right:19%;float:right; -webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;text-color:black;margin-top: 7px;">
-                <div style="color:black;"><?php echo $this->getChildHtml('minicart_head'); ?></div>
-            </div>
-            <div style="position:relative;width:156px;height:41px;float:right; -webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;text-color:black;margin-top: 7px;">
-                <a href="https://sansanum.com/wishlist/" class="wishlist-header" style="color:#b8dba0; text-decoration: none;">
-                    <strong><p class="wishlist-header" style="font-family: libreFranklin-bold;font-size: 13px;margin-top: 10px;"><span class="glyphicon glyphicon-heart-empty" style="font-size: 14px;margin-right: 5px"></span> Lista de deseos </p></strong>
-                </a>
-            </div>
+
+
                 <!-- Search -->
             <div style="background-color: #FED6D2; align-content: center; margin-top: 83px; padding-bottom:2px;margin-left: -1px;">
                 <div style="width: 50%; margin-left: 30%;background-color: #FED6D2;margin-top: 54px; border: 1px solid transparent ; padding: 2px; border-radius: 2px;">

@@ -3409,6 +3409,8 @@ body {
   }
   .logo .large {
     display: block;
+    height: 81px;
+    width: 109px;
   }
 }
 /* ============================================ *
@@ -3511,8 +3513,30 @@ a.skip-link {
 .skip-link .label {
   display: none;
 }
+.wishlist-navbar{
+  position: relative;
+
+  width: 156px;
+
+  height: 41px;
+
+  -webkit-border-radius: 4px;
+
+  -moz-border-radius: 4px;
+
+  border-radius: 4px;
+}
 div.cambioborde{
   border:2px solid #b8dba0;
+  width: 156px;
+
+  height: 41px;
+
+  -webkit-border-radius: 4px;
+
+  -moz-border-radius: 4px;
+
+  border-radius: 4px;
 }
 div.cambioborde:hover{
   border:2px solid #84b942;
@@ -4466,8 +4490,8 @@ h3.product-name,
 h4.product-name,
 h5.product-name,
 p.product-name {
-  position: absolute;
-  margin: 200px 0px 0px 0px;
+  /*position: absolute;
+  margin: 200px 0px 0px 0px;*/
   margin-bottom: 0.5em;
   color: #636363;
   font-family: "Raleway", "Helvetica Neue", Verdana, Arial, sans-serif;

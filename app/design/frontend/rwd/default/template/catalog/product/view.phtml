@@ -117,7 +117,7 @@
                 <?php endif; ?>
             </div>
             </div>
-            <?php echo $this->getChildHtml('related_products') ?>
+            <?php //echo $this->getChildHtml('related_products') ?>
 
             <div class="clearer"></div>
             <?php if ($_product->isSaleable() && $this->hasOptions()):?>
@@ -192,5 +192,5 @@
 
     <?php echo $this->getChildHtml('upsell_products') ?>
     <?php echo $this->getChildHtml('product_additional_data') ?>
-
+    <?php echo $this->getChildHtml('related_products') ?>
 </div>
